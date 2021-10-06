@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/xuni/bundle.js"></script>
+	</head>
+	<body>
+		<div id="stage">
+			
+		</div>
+		
+		<script>
+		// var temp=`
+		// <div>
+		// 	{{#arr}}
+		// 	<h6>
+		// 		我叫{{name}},今年{{age}}岁,性别:{{gender}}
+		// 	</h6>
+		// 	{{/arr}}
+		// </div>
+		// `;
+		
+		let temp=`<div>
+		{{#arr}}
+			<ol>
+				<li>我的名字是{{name}},性别为{{gender}},年龄是{{age}}</li>
+			</ol>
+			<h1>
+			{{#arr2}}
+				<h6>我们是{{country}}人！我爱我的{{myhome}}</h6>
+				{{#arr2}}
+					<h6>我们是{{country}}人！我爱我的{{myhome}}</h6>
+				{{/arr2}}
+			{{/arr2}}
+			</h1>
+		{{/arr}}
+		</div>`;
+		
+		let data={
+			"name":"小明",
+			'age':19,
+			'gender':"男",
+			arr:[
+			{"name":"小明",age:19,gender:"男",
+			arr2:[
+				{
+				'country':'中国',
+				'myhome':'祖国',
+				}
+			]
+			},
+			{"name":"小花",age:19,gender:"女",
+			arr2:[
+				{
+				'country':'中国',
+				'myhome':'祖国',
+				}
+			]
+			},
+			{"name":"阿斯顿",age:18,gender:"男",
+			arr2:[
+				{
+				'country':'中国',
+				'myhome':'祖国',
+				}
+			]
+			}
+			],
+			
+		};
+		
+		// let data={
+		// 	"name":"阿斯顿",
+		// 	'age':18,
+		// 	'gender':'男',
+			
+		// 	// arr:[
+				
+		// 	// ]
+		// }
+			
+			let domStr=TemplateEngine.render(temp,data);
+			//渲染上树
+			
+		</script>
+		
+	</body>
+</html>
