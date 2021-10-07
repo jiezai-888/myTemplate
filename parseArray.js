@@ -7,7 +7,7 @@ export default function parseArray(token,data){
 	// console.log("牛逼不666:",value);
 	let resultStr='';
 	if(value){
-		for(let i=0;i<v.length;i++){
+		for(let i=0;i<value.length;i++){
 			resultStr+=myrender(token[2],{
 				...value[i],
 				'.':value[i]
